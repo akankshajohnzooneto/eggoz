@@ -1,0 +1,20 @@
+  // const v = new Validator(req.body, {
+  //   emailid: 'required|email',
+  //   password: 'required'
+  // });
+ 
+  // v.check().then(function (matched) {
+  //   console.log(matched);
+  //   if(matched == false){
+  //     req.flash('success', 'All field  is required');
+  //     res.redirect('/');
+  //    }
+  //    else{
+     
+  //     {
+  //      //res.redirect('/');
+  //     }
+  //    }
+
+  //   //console.log(v.errors);
+  // });

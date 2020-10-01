@@ -1,0 +1,76 @@
+<%- include ('../includes/header') %>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>State</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">state</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <%- include ('../includes/sidebar') %>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Edit state</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="/state/data" method="post">
+                <div class="card-body">
+                    <div class="row">
+
+                    
+                 <div class="col-md-6">   
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Country</label>
+                    <select name="country_id" class="form-control">
+                        <% for (i in data) { %>
+                         <option value="<%= data[i].id %>" <%if (data[i].id == singledata[0].country_id) { %> selected
+                            <% } %> ><%= data[i].name %></option>
+                        <% } %>
+                    </select>
+                  </div>
+                  </div>
+                  <div class="col-md-6">   
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter country Name" name = "name" value="<%= singledata[0].name%>">
+                  </div>
+                  </div>
+                </div>
+            </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+
+          </div>
+          <!--/.col (left) -->
+         
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    
+  </div>
